@@ -1,0 +1,19 @@
+{
+  "name": "athlete-backend",
+  "version": "1.0.0",
+  "description": "Server portion of a full-stack starter template",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Donald Dobbin",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.14.1",
+    "mongoose": "^4.11.11"
+  }
+}
