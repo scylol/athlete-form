@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const athleteSchema = mongoose.Schema({
   name:{type: String, required: true},
-  sport: {type: String, required: true},
+  sports: {type: String, required: true},
   nationality: {type: String, required: true},
   gender: {type: String, required: true},
   dateOfBirth: {type: String, required: true},
@@ -17,7 +17,7 @@ const athleteSchema = mongoose.Schema({
 athleteSchema.methods.apiRepr = function() {
   return {
     name:this.name,
-    sport: this.sport,
+    sports: this.sports,
     nationality: this.nationality,
     gender: this.gender,
     dateOfBirth: this.dateOfBirth,

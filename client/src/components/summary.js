@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import SocialMedia from "./social-media";
+import {createProfile} from "../actions/actions";
 
 export class Summary extends React.Component {
     constructor() {
@@ -14,7 +15,8 @@ export class Summary extends React.Component {
 
       submitData(e) {
         e.preventDefault();
-        
+        this.props.dispatch(createProfile());
+        console.log("hello wdwadwad")
       }
     
       prevSection() {
@@ -40,7 +42,7 @@ export class Summary extends React.Component {
             type="submit"
             value="Submit"
             onClick={e => {
-              this.nextSection(e);
+              this.submitData(e);
             }}
             form="myForm"
           />

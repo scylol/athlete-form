@@ -1,6 +1,4 @@
 import React from "react";
-import { connect } from "react-redux";
-import { basicInfoNext } from "../actions/actions";
 import BasicInfo from "./basic-info";
 
 export default class LandingPage extends React.Component {

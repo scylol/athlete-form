@@ -28,7 +28,7 @@ app.post('/api/athletes', (req, res) => {
   Athlete
   .create({
     name:req.body.name,
-    sport: req.body.sport,
+    sports: req.body.sports,
     nationality: req.body.nationality,
     gender: req.body.gender,
     dateOfBirth: req.body.dateOfBirth,

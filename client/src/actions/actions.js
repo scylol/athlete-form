@@ -15,3 +15,29 @@ export const socialMediaNext = (info) => ({
   type: SOCIAL_MEDIA_NEXT,
   info
 });
+
+export const createProfile = () => (dispatch, getState) => {
+  const state = getState();
+  fetch('/api/athletes', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({name:state.name,
+        sports: state.sports,
+        nationality: state.nationality,
+        gender: state.gender,
+        dateOfBirth: state.dateOfBirth,
+        description: state.description,
+        location: state.location,
+        team: state.team,
+        instagram: state.instagram,
+        twitter: state.twitter, 
+        facebook: state.facebook})
+  }).then(res => {
+    return res.json();
+  }).catch(err => {
+    console.log(err);
+  });
+};
