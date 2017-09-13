@@ -21,48 +21,48 @@ export class SocialMedia extends React.Component {
   render() {
     return (
       <div className="main-content">
-      <h1>Athlete Form</h1>
-       <form id="myForm">
-            Instagram:<input
-              required
-              name="instagram"
-              type="text"
-              value={this.props.instagram}
-              onChange={this.handleChange}
-            />
-            Twitter:<input
-              name="twitter"
-              type="text"
-              value={this.props.twitter}
-              onChange={this.handleChange}
-            />
-            Facebook:<input
-              name="facebook"
-              type="text"
-              value={this.props.facebook}
-              onChange={this.handleChange}
-            />
-          </form>
-          <div className="form-buttons">
+        <h1>Athlete Form</h1>
+        <form id="myForm">
+          Instagram:<input
+            required
+            name="instagram"
+            type="text"
+            value={this.props.instagram}
+            onChange={this.handleChange}
+          />
+          Twitter:<input
+            name="twitter"
+            type="text"
+            value={this.props.twitter}
+            onChange={this.handleChange}
+          />
+          Facebook:<input
+            name="facebook"
+            type="text"
+            value={this.props.facebook}
+            onChange={this.handleChange}
+          />
+        </form>
+        <div className="form-buttons">
           <button
-          id="goToAbout"
-          className="next-button"
-          onClick={e => {
-            this.nextSection(e);
-          }}
-        >
-          Prev
-        </button>
-        <button
-        form="myForm"
-        id="goToSummary"
-        className="next-button"
-        onClick={e => {
-          this.nextSection(e);
-        }}
-      >
-        Next
-      </button>
+            id="goToAbout"
+            className="next-button"
+            onClick={e => {
+              this.nextSection(e);
+            }}
+          >
+            Prev
+          </button>
+          <button
+            form="myForm"
+            id="goToSummary"
+            className="next-button"
+            onClick={e => {
+              this.nextSection(e);
+            }}
+          >
+            Next
+          </button>
         </div>
       </div>
     );

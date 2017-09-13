@@ -2,7 +2,6 @@ import React from "react";
 import { connect } from "react-redux";
 import { nextPage, updateInfo } from "../actions/actions";
 
-
 export class BasicInfo extends React.Component {
   constructor() {
     super();
@@ -40,7 +39,7 @@ export class BasicInfo extends React.Component {
 
     return (
       <div className="main-content">
-      <h1>Athlete Form</h1>
+        <h1>Athlete Form</h1>
         <form id="myForm">
           Name:<input
             name="name"
@@ -73,18 +72,17 @@ export class BasicInfo extends React.Component {
             onChange={this.handleChange}
           />
           <button
-          form="myForm"
-          id="goToAbout"
-          className="next-button"
-          onClick={e => {
-            this.nextSection(e);
-          }}
-        >
-          Next
-        </button>
+            form="myForm"
+            id="goToAbout"
+            className="next-button"
+            onClick={e => {
+              this.nextSection(e);
+            }}
+          >
+            Next
+          </button>
         </form>
-        
-        
+
         {feedback}
       </div>
     );

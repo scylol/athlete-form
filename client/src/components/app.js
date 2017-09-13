@@ -12,29 +12,20 @@ class App extends React.Component {
   render() {
     let content = "";
     if (this.props.currentPage === "goToLanding") {
-      console.log()
-      content = <LandingPage />
+      console.log();
+      content = <LandingPage />;
+    } else if (this.props.currentPage === "goToBasic") {
+      content = <BasicInfo />;
+    } else if (this.props.currentPage === "goToProfiles") {
+      content = <Profiles />;
+    } else if (this.props.currentPage === "goToAbout") {
+      content = <About />;
+    } else if (this.props.currentPage === "goToSocialMedia") {
+      content = <SocialMedia />;
+    } else if (this.props.currentPage === "goToSummary") {
+      content = <Summary />;
     }
-    else if (this.props.currentPage === "goToBasic") {
-      content = <BasicInfo />
-    }
-    else if (this.props.currentPage === "goToProfiles") {
-      content = <Profiles />
-    }
-    else if (this.props.currentPage === "goToAbout") {
-      content = <About />
-    }
-    else if (this.props.currentPage === "goToSocialMedia") {
-      content = <SocialMedia />
-    }
-    else if (this.props.currentPage === "goToSummary") {
-      content = <Summary />
-    }
-      return (
-        <div className="App">
-       {content}
-        </div>
-      );
+    return <div className="App">{content}</div>;
   }
 }
 

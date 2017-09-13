@@ -1,7 +1,7 @@
 {
   "name": "athlete-backend",
   "version": "1.0.0",
-  "description": "Server portion of a full-stack starter template",
+  "description": "Server side",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js"

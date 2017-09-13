@@ -29,15 +29,18 @@ export class Profiles extends React.Component {
 
     return (
       <div className="profile-content">
-      <div className='header'><h1>Athlete List</h1></div>
-        <button
-        id="goToLanding"
-         onClick={e => {
-            this.goToHomePage(e);
-          }}>Home Page</button>
-          <div className="profile-container">
-        {athletes}
+        <div className="header">
+          <h1>Athlete List</h1>
         </div>
+        <button
+          id="goToLanding"
+          onClick={e => {
+            this.goToHomePage(e);
+          }}
+        >
+          Home Page
+        </button>
+        <div className="profile-container">{athletes}</div>
       </div>
     );
   }

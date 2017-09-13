@@ -34,7 +34,7 @@ export class Summary extends React.Component {
         <div className="submit-text">
           <p>
             {" "}
-            Your Information has been successfully Sumbitted! Click below to
+            Your information has been successfully sumbitted! Click below to
             view all of our athlete profiles!{" "}
           </p>
           <button
@@ -51,7 +51,7 @@ export class Summary extends React.Component {
     } else {
       content = (
         <div className="athlete-info">
-        <h1>Make sure everything is correct!</h1>
+          <h1>Make sure everything is correct!</h1>
           <p>Name:{this.props.name}</p>
           <p>Sports:{this.props.sports}</p>
           <p>Nationality:{this.props.nationality}</p>

@@ -21,7 +21,7 @@ const initialState = {
   loading: false,
   error: null,
   athletes: [],
-  currentPage: 'goToLanding'
+  currentPage: "goToLanding"
 };
 
 export default function reducer(state = initialState, action) {
@@ -49,9 +49,8 @@ export default function reducer(state = initialState, action) {
     };
   } else if (action.type === UPDATE_INFO) {
     return { ...state, [action.infoName]: action.infoValue };
-  }
-  else if (action.type === NEXT_PAGE) {
-    return {...state, currentPage: action.page}
+  } else if (action.type === NEXT_PAGE) {
+    return { ...state, currentPage: action.page };
   }
   return state;
 }

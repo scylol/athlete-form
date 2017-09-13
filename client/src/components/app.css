@@ -1,38 +1,38 @@
 .main-content {
-    display: flex;
-    font-size: 24px;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 50px;
+  display: flex;
+  font-size: 24px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 50px;
 }
 
 .main-content h1 {
-    margin:0;
+  margin: 0;
 }
 #myForm {
-    padding: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #myForm input {
-    margin-bottom: 15px;
-    padding: 5px;
+  margin-bottom: 15px;
+  padding: 5px;
 }
 
 .form-buttons {
-    display: flex;
-    width: 30%;
-    justify-content: space-around;
+  display: flex;
+  width: 30%;
+  justify-content: space-around;
 }
 
 button {
   width: 200px;
   font-size: 18px;
-  margin-top:10px;
+  margin-top: 10px;
   align-self: center;
   background-color: #064250;
   border: none;

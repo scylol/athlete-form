@@ -21,7 +21,7 @@ export class About extends React.Component {
   render() {
     return (
       <div className="main-content">
-      <h1>Athlete Form</h1>
+        <h1>Athlete Form</h1>
         <form id="myForm">
           Description:<input
             required
