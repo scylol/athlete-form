@@ -79,7 +79,7 @@ export class Summary extends React.Component {
     if(this.state.showProfiles === true) {
         content = <Profiles />
     }
-    return <div className="main-content">{content}</div>;
+    return <div className="summary-content">{content}</div>;
   }
 }
 

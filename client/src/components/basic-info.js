@@ -26,7 +26,7 @@ export class BasicInfo extends React.Component {
       nationality: this.props.nationality,
       gender: this.props.nationality,
       dateOfBirth: this.props.dateOfBirth
-    })
+    });
   }
 
   handleChange(e) {
@@ -49,9 +49,11 @@ export class BasicInfo extends React.Component {
     }
   }
 
-  
-
   render() {
+    let feedback = "";
+    if (this.state.feedback === true) {
+      feedback = <p> All of these fields are required! </p>;
+    }
     let content = "";
     if (this.state.nextPage === false) {
       content = (
@@ -98,22 +100,14 @@ export class BasicInfo extends React.Component {
             }}
             form="myForm"
           />
+          {feedback}
         </div>
       );
     } else {
       content = <About />;
     }
 
-    let feedback = "";
-    if (this.state.feedback === true) {
-      feedback = <p> All of these fields are required! </p>;
-    }
-    return (
-      <div className="main-content">
-        {content}
-        {feedback}
-      </div>
-    );
+    return <div className="basic-info">{content}</div>;
   }
 }
 

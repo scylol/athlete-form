@@ -86,7 +86,7 @@ export class SocialMedia extends React.Component {
     if (this.state.prevPage === true) {
       content = <About />;
     }
-    return <div className="main-content">{content}</div>;
+    return <div className="social-media-content">{content}</div>;
   }
 }
 

@@ -87,7 +87,7 @@ export class About extends React.Component {
     if (this.state.prevPage === true) {
       content = <BasicInfo />;
     }
-    return <div className="main-content">{content}</div>;
+    return <div className="about-content">{content}</div>;
   }
 }
 

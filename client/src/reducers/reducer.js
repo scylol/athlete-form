@@ -34,7 +34,20 @@ export default function reducer(state=initialState, action) {
     return {...state, loading: false, error: action.error}
   }
   else if(action.type === FETCH_ATHLETES_SUCCESS) {
-    return{...state, athletes: action.athletes, loading: false, error: null}
+    return{...state, name: "",
+    sports: "",
+    nationality: "",
+    gender: "",
+    dateOfBirth: "",
+    description: "",
+    location: "",
+    team: "",
+    instagram: "",
+    twitter: "",
+    facebook: "",
+     athletes: action.athletes, 
+     loading: false, 
+     rror: null}
   }
   return state;
 }
