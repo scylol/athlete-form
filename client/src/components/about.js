@@ -1,93 +1,72 @@
 import React from "react";
 import { connect } from "react-redux";
-import { aboutNext } from "../actions/actions";
-import SocialMedia from "./social-media";
-import BasicInfo from "./basic-info";
+import { nextPage, updateInfo } from "../actions/actions";
+
 
 export class About extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
     this.nextSection = this.nextSection.bind(this);
-    this.prevSection = this.prevSection.bind(this);
-    this.state = {
-      description: "",
-      location: "",
-      team: "",
-      nextPage: false,
-      prevPage: false
-    };
-  }
-
-  componentDidMount() {
-    this.setState({
-      description: this.props.description,
-      location: this.props.location,
-      team: this.props.team
-    });
+    
   }
 
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.props.dispatch(updateInfo(e.target.name, e.target.value));
   }
 
   nextSection(e) {
     e.preventDefault();
-    this.props.dispatch(aboutNext(this.state));
-    this.setState({ nextPage: true });
+    this.props.dispatch(nextPage(e.target.id));
   }
 
-  prevSection() {
-    this.setState({ prevPage: true });
-  }
+ 
 
   render() {
-    let content = "";
-    if (this.state.nextPage === false) {
-      content = (
-        <div className="form-content">
-          <form id="myForm">
-            Description:<input
-              required
-              name="description"
-              type="text"
-              value={this.state.description}
-              onChange={this.handleChange}
-            />
-            Location:{" "}
-            <input
-              name="location"
-              type="text"
-              value={this.state.location}
-              onChange={this.handleChange}
-            />
-            Team:<input
-              name="team"
-              type="text"
-              value={this.state.team}
-              onChange={this.handleChange}
-            />
-          </form>
-          <button onClick={this.prevSection}>Go Back</button>
-          <input
-            className="submit-button"
-            type="submit"
-            value="Next"
-            onClick={e => {
-              this.nextSection(e);
-            }}
-            form="myForm"
+    return (
+      <div className="about-content">
+        <form id="myForm">
+          Description:<input
+            required
+            name="description"
+            type="text"
+            value={this.props.description}
+            onChange={this.handleChange}
           />
-        </div>
-      );
-    } else {
-      content = <SocialMedia />;
-    }
-
-    if (this.state.prevPage === true) {
-      content = <BasicInfo />;
-    }
-    return <div className="about-content">{content}</div>;
+          Location:{" "}
+          <input
+            name="location"
+            type="text"
+            value={this.props.location}
+            onChange={this.handleChange}
+          />
+          Team:<input
+            name="team"
+            type="text"
+            value={this.props.team}
+            onChange={this.handleChange}
+          />
+        </form>
+        <button
+        id="goToBasic"
+        className="next-button"
+        onClick={e => {
+          this.nextSection(e);
+        }}
+      >
+        Prev
+      </button>
+      <button
+      id="goToSocialMedia"
+      className="next-button"
+      onClick={e => {
+        this.nextSection(e);
+      }}
+    >
+      Next
+    </button>
+      </div>
+    );
   }
 }
 

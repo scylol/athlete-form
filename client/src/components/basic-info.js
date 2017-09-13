@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import { basicInfoNext } from "../actions/actions";
-import About from "./about";
+import { nextPage, updateInfo } from "../actions/actions";
+
 
 export class BasicInfo extends React.Component {
   constructor() {
@@ -9,42 +9,24 @@ export class BasicInfo extends React.Component {
     this.handleChange = this.handleChange.bind(this);
     this.nextSection = this.nextSection.bind(this);
     this.state = {
-      name: "",
-      sports: "",
-      nationality: "",
-      gender: "",
-      dateOfBirth: "",
-      nextPage: false,
       feedback: false
     };
   }
 
-  componentDidMount() {
-    this.setState({
-      name: this.props.name,
-      sports: this.props.sports,
-      nationality: this.props.nationality,
-      gender: this.props.nationality,
-      dateOfBirth: this.props.dateOfBirth
-    });
-  }
-
   handleChange(e) {
-    this.setState({ [e.target.name]: e.target.value });
+    this.props.dispatch(updateInfo(e.target.name, e.target.value));
   }
 
   nextSection(e) {
-    e.preventDefault();
-    this.props.dispatch(basicInfoNext(this.state));
     if (
-      this.state.name === "" ||
-      this.state.sports === "" ||
-      this.state.gender === "" ||
-      this.state.dateOfBirth === ""
+      this.props.name === "" ||
+      this.props.sports === "" ||
+      this.props.gender === "" ||
+      this.props.dateOfBirth === ""
     ) {
       this.setState({ feedback: true });
     } else {
-      this.setState({ nextPage: true });
+      this.props.dispatch(nextPage(e.target.id));
       this.setState({ feedback: false });
     }
   }
@@ -54,60 +36,54 @@ export class BasicInfo extends React.Component {
     if (this.state.feedback === true) {
       feedback = <p> All of these fields are required! </p>;
     }
-    let content = "";
-    if (this.state.nextPage === false) {
-      content = (
-        <div className="form-content">
-          <form id="myForm">
-            Name:<input
-              name="name"
-              type="text"
-              value={this.state.name}
-              onChange={this.handleChange}
-            />
-            Sports:<input
-              name="sports"
-              type="text"
-              value={this.state.sports}
-              onChange={this.handleChange}
-            />
-            Nationality:<input
-              name="nationality"
-              type="text"
-              value={this.state.nationality}
-              onChange={this.handleChange}
-            />
-            Gender:<input
-              name="gender"
-              type="text"
-              value={this.state.gender}
-              onChange={this.handleChange}
-            />
-            Date of Birth:<input
-              name="dateOfBirth"
-              type="text"
-              value={this.state.dateOfBirth}
-              onChange={this.handleChange}
-            />
-          </form>
 
-          <input
-            className="submit-button"
-            type="submit"
-            value="Next"
-            onClick={e => {
-              this.nextSection(e);
-            }}
-            form="myForm"
+    return (
+      <div className="form-content">
+        <form id="myForm">
+          Name:<input
+            name="name"
+            type="text"
+            value={this.props.name}
+            onChange={this.handleChange}
           />
-          {feedback}
-        </div>
-      );
-    } else {
-      content = <About />;
-    }
+          Sports:<input
+            name="sports"
+            type="text"
+            value={this.props.sports}
+            onChange={this.handleChange}
+          />
+          Nationality:<input
+            name="nationality"
+            type="text"
+            value={this.props.nationality}
+            onChange={this.handleChange}
+          />
+          Gender:<input
+            name="gender"
+            type="text"
+            value={this.props.gender}
+            onChange={this.handleChange}
+          />
+          Date of Birth:<input
+            name="dateOfBirth"
+            type="text"
+            value={this.props.dateOfBirth}
+            onChange={this.handleChange}
+          />
+        </form>
 
-    return <div className="basic-info">{content}</div>;
+        <button
+          id="goToAbout"
+          className="next-button"
+          onClick={e => {
+            this.nextSection(e);
+          }}
+        >
+          Next
+        </button>
+        {feedback}
+      </div>
+    );
   }
 }
 

@@ -1,4 +1,10 @@
-import{BASIC_INFO_NEXT, ABOUT_NEXT, SOCIAL_MEDIA_NEXT, FETCH_ATHLETES_ERROR, FETCH_ATHLETES_REQUEST, FETCH_ATHLETES_SUCCESS} from '../actions/actions';
+import {
+  FETCH_ATHLETES_ERROR,
+  FETCH_ATHLETES_REQUEST,
+  FETCH_ATHLETES_SUCCESS,
+  UPDATE_INFO,
+  NEXT_PAGE
+} from "../actions/actions";
 
 const initialState = {
   name: "",
@@ -14,40 +20,38 @@ const initialState = {
   facebook: "",
   loading: false,
   error: null,
-  athletes: []
+  athletes: [],
+  currentPage: 'goToLanding'
 };
 
-export default function reducer(state=initialState, action) {
-  if(action.type === BASIC_INFO_NEXT) {
-    return {...state, name: action.info.name, sports: action.info.sports, nationality: action.info.nationality, gender: action.info.gender, dateOfBirth: action.info.dateOfBirth}
+export default function reducer(state = initialState, action) {
+  if (action.type === FETCH_ATHLETES_REQUEST) {
+    return { ...state, loading: true, error: null };
+  } else if (action.type === FETCH_ATHLETES_ERROR) {
+    return { ...state, loading: false, error: action.error };
+  } else if (action.type === FETCH_ATHLETES_SUCCESS) {
+    return {
+      ...state,
+      name: "",
+      sports: "",
+      nationality: "",
+      gender: "",
+      dateOfBirth: "",
+      description: "",
+      location: "",
+      team: "",
+      instagram: "",
+      twitter: "",
+      facebook: "",
+      athletes: action.athletes,
+      loading: false,
+      error: null
+    };
+  } else if (action.type === UPDATE_INFO) {
+    return { ...state, [action.infoName]: action.infoValue };
   }
-  else if(action.type === ABOUT_NEXT) {
-    return {...state, description: action.info.description, location: action.info.location, team: action.info.team}
-  }
-  else if(action.type === SOCIAL_MEDIA_NEXT) {
-    return {...state, instagram: action.info.instagram, twitter: action.info.twitter, facebook: action.info.facebook}
-  }
-  else if(action.type === FETCH_ATHLETES_REQUEST) {
-    return {...state, loading: true, error: null}
-  }
-  else if(action.type === FETCH_ATHLETES_ERROR) {
-    return {...state, loading: false, error: action.error}
-  }
-  else if(action.type === FETCH_ATHLETES_SUCCESS) {
-    return{...state, name: "",
-    sports: "",
-    nationality: "",
-    gender: "",
-    dateOfBirth: "",
-    description: "",
-    location: "",
-    team: "",
-    instagram: "",
-    twitter: "",
-    facebook: "",
-     athletes: action.athletes, 
-     loading: false, 
-     rror: null}
+  else if (action.type === NEXT_PAGE) {
+    return {...state, currentPage: action.page}
   }
   return state;
 }
