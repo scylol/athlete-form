@@ -1,0 +1,30 @@
+li {
+  list-style: none;
+}
+
+.profile-content {
+  padding: 50px;
+  font-size: 24px;
+}
+
+.profile-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.profile-box {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 24%;
+  height: 450px;
+  background-color: aliceblue;
+  margin: 5px;
+}
+
+/* .profile-content h1 {
+    text-align: center;
+    font-size:24px;
+} */

@@ -18,6 +18,7 @@ export class BasicInfo extends React.Component {
   }
 
   nextSection(e) {
+    e.preventDefault();
     if (
       this.props.name === "" ||
       this.props.sports === "" ||
@@ -38,7 +39,8 @@ export class BasicInfo extends React.Component {
     }
 
     return (
-      <div className="form-content">
+      <div className="main-content">
+      <h1>Athlete Form</h1>
         <form id="myForm">
           Name:<input
             name="name"
@@ -70,9 +72,8 @@ export class BasicInfo extends React.Component {
             value={this.props.dateOfBirth}
             onChange={this.handleChange}
           />
-        </form>
-
-        <button
+          <button
+          form="myForm"
           id="goToAbout"
           className="next-button"
           onClick={e => {
@@ -81,6 +82,9 @@ export class BasicInfo extends React.Component {
         >
           Next
         </button>
+        </form>
+        
+        
         {feedback}
       </div>
     );

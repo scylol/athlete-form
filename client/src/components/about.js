@@ -2,13 +2,11 @@ import React from "react";
 import { connect } from "react-redux";
 import { nextPage, updateInfo } from "../actions/actions";
 
-
 export class About extends React.Component {
   constructor() {
     super();
     this.handleChange = this.handleChange.bind(this);
     this.nextSection = this.nextSection.bind(this);
-    
   }
 
   handleChange(e) {
@@ -20,11 +18,10 @@ export class About extends React.Component {
     this.props.dispatch(nextPage(e.target.id));
   }
 
- 
-
   render() {
     return (
-      <div className="about-content">
+      <div className="main-content">
+      <h1>Athlete Form</h1>
         <form id="myForm">
           Description:<input
             required
@@ -47,24 +44,27 @@ export class About extends React.Component {
             onChange={this.handleChange}
           />
         </form>
-        <button
-        id="goToBasic"
-        className="next-button"
-        onClick={e => {
-          this.nextSection(e);
-        }}
-      >
-        Prev
-      </button>
-      <button
-      id="goToSocialMedia"
-      className="next-button"
-      onClick={e => {
-        this.nextSection(e);
-      }}
-    >
-      Next
-    </button>
+        <div className="form-buttons">
+          <button
+            id="goToBasic"
+            className="next-button"
+            onClick={e => {
+              this.nextSection(e);
+            }}
+          >
+            Prev
+          </button>
+          <button
+            form="myForm"
+            id="goToSocialMedia"
+            className="next-button"
+            onClick={e => {
+              this.nextSection(e);
+            }}
+          >
+            Next
+          </button>
+        </div>
       </div>
     );
   }

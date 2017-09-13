@@ -4,18 +4,6 @@ export const nextPage = (page) => ({
   page
 });
 
-// export const ABOUT_NEXT = 'ABOUT_NEXT';
-// export const aboutNext = (info) => ({
-//   type: ABOUT_NEXT,
-//   info
-// });
-
-// export const SOCIAL_MEDIA_NEXT = 'SOCIAL_MEDIA_NEXT';
-// export const socialMediaNext = (info) => ({
-//   type: SOCIAL_MEDIA_NEXT,
-//   info
-// });
-
 export const UPDATE_INFO = 'UPDATE_INFO';
 export const updateInfo = (infoName, infoValue) => ({
   type: UPDATE_INFO,

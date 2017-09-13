@@ -2,12 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { fetchAthletes, nextPage } from "../actions/actions";
 import Profiles from "./profiles";
+import "./landing-page.css";
 
 export class LandingPage extends React.Component {
   constructor() {
     super();
     this.showProfiles = this.showProfiles.bind(this);
-}
+  }
 
   nextSection(e) {
     e.preventDefault();
@@ -22,6 +23,8 @@ export class LandingPage extends React.Component {
   render() {
     return (
       <div className="landing-page-content">
+      <div className='header'><h1>OpenSponsorship Athlete Form</h1></div>
+      <div className="button-section">
         <button
           id="goToBasic"
           className="next-button"
@@ -32,7 +35,7 @@ export class LandingPage extends React.Component {
           Create Profile
         </button>
         <button
-        id="goToProfiles"
+          id="goToProfiles"
           className="view-athletes"
           onClick={e => {
             this.showProfiles(e);
@@ -40,6 +43,7 @@ export class LandingPage extends React.Component {
         >
           View Profiles
         </button>
+        </div>
       </div>
     );
   }

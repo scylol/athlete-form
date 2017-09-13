@@ -6,6 +6,7 @@ import About from "./about";
 import SocialMedia from "./social-media";
 import Summary from "./summary";
 import Profiles from "./profiles";
+import "./app.css";
 
 class App extends React.Component {
   render() {
@@ -42,7 +43,3 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps)(App);
-
-// if this.state.page == landing, render the landing page,
-// etc etc etc
-//add a page tracker to redux state, then check what the page is equal to, and render that page here.

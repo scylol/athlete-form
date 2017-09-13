@@ -20,9 +20,9 @@ export class SocialMedia extends React.Component {
 
   render() {
     return (
-      <div className="social-media-content">
-        <div className="form-content">
-          <form id="myForm">
+      <div className="main-content">
+      <h1>Athlete Form</h1>
+       <form id="myForm">
             Instagram:<input
               required
               name="instagram"
@@ -43,6 +43,7 @@ export class SocialMedia extends React.Component {
               onChange={this.handleChange}
             />
           </form>
+          <div className="form-buttons">
           <button
           id="goToAbout"
           className="next-button"
@@ -53,6 +54,7 @@ export class SocialMedia extends React.Component {
           Prev
         </button>
         <button
+        form="myForm"
         id="goToSummary"
         className="next-button"
         onClick={e => {

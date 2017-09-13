@@ -1,8 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-
 import { nextPage, createProfile, fetchAthletes } from "../actions/actions";
-
+import "./summary.css";
 
 export class Summary extends React.Component {
   constructor() {
@@ -10,7 +9,7 @@ export class Summary extends React.Component {
     this.submitData = this.submitData.bind(this);
     this.prevSection = this.prevSection.bind(this);
     this.showProfiles = this.showProfiles.bind(this);
-    this.state = {submittedData: false};
+    this.state = { submittedData: false };
   }
 
   submitData(e) {
@@ -29,7 +28,7 @@ export class Summary extends React.Component {
   }
 
   render() {
-  let content = "";
+    let content = "";
     if (this.state.submittedData === true) {
       content = (
         <div className="submit-text">
@@ -39,7 +38,7 @@ export class Summary extends React.Component {
             view all of our athlete profiles!{" "}
           </p>
           <button
-          id="goToProfiles"
+            id="goToProfiles"
             className="view-athletes"
             onClick={e => {
               this.showProfiles(e);
@@ -49,48 +48,45 @@ export class Summary extends React.Component {
           </button>
         </div>
       );
+    } else {
+      content = (
+        <div className="athlete-info">
+        <h1>Make sure everything is correct!</h1>
+          <p>Name:{this.props.name}</p>
+          <p>Sports:{this.props.sports}</p>
+          <p>Nationality:{this.props.nationality}</p>
+          <p>Gender:{this.props.gender}</p>
+          <p>Date of Birth:{this.props.dateofBirth}</p>
+          <p>Location:{this.props.location}</p>
+          <p>Team:{this.props.team}</p>
+          <p>Instagram:{this.props.instagram}</p>
+          <p>Twitter:{this.props.twitter}</p>
+          <p>Facebook:{this.props.facebook}</p>
+          <div className="form-buttons">
+            <button
+              id="goToSocialMedia"
+              className="next-button"
+              onClick={e => {
+                this.prevSection(e);
+              }}
+            >
+              Go Back
+            </button>
+            <button
+              id="submit"
+              className="view-athletes"
+              onClick={e => {
+                this.submitData(e);
+              }}
+            >
+              Submit
+            </button>
+          </div>
+        </div>
+      );
     }
 
-    else {
-      content = <div className="athlete-info">
-      <p>Name:{this.props.name}</p>
-      <p>Sports:{this.props.sports}</p>
-      <p>Nationality:{this.props.nationality}</p>
-      <p>Gender:{this.props.gender}</p>
-      <p>Date of Birth:{this.props.dateofBirth}</p>
-      <p>Location:{this.props.location}</p>
-      <p>Team:{this.props.team}</p>
-      <p>Instagram:{this.props.instagram}</p>
-      <p>Twitter:{this.props.twitter}</p>
-      <p>Facebook:{this.props.facebook}</p>
-      <button
-      id="goToSocialMedia"
-      className="next-button"
-      onClick={e => {
-        this.prevSection(e);
-      }}
-    >
-      Go Back
-    </button>
-    <button
-    id="submit"
-      className="view-athletes"
-      onClick={e => {
-        this.submitData(e);
-      }}
-    >
-      Submit
-    </button>
-
-    </div>;
-    }
-
-    
-    return (
-      <div className="athlete-container">
-      {content}
-      </div>
-    )
+    return <div className="athlete-content">{content}</div>;
   }
 }
 
