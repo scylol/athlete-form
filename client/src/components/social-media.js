@@ -23,19 +23,19 @@ export class SocialMedia extends React.Component {
       <div className="main-content">
         <h1>Athlete Form</h1>
         <form id="myForm">
-          Instagram:<input
+          Instagram<input
             name="instagram"
             type="text"
             value={this.props.instagram}
             onChange={this.handleChange}
           />
-          Twitter:<input
+          Twitter<input
             name="twitter"
             type="text"
             value={this.props.twitter}
             onChange={this.handleChange}
           />
-          Facebook:<input
+          Facebook<input
             name="facebook"
             type="text"
             value={this.props.facebook}

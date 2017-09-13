@@ -41,31 +41,31 @@ export class BasicInfo extends React.Component {
       <div className="main-content">
         <h1>Athlete Form</h1>
         <form id="myForm">
-          Name:<input
+          Name<input
             name="name"
             type="text"
             value={this.props.name}
             onChange={this.handleChange}
           />
-          Sports:<input
+          Sports<input
             name="sports"
             type="text"
             value={this.props.sports}
             onChange={this.handleChange}
           />
-          Nationality:<input
+          Nationality<input
             name="nationality"
             type="text"
             value={this.props.nationality}
             onChange={this.handleChange}
           />
-          Gender:<input
+          Gender<input
             name="gender"
             type="text"
             value={this.props.gender}
             onChange={this.handleChange}
           />
-          Date of Birth:<input
+          Date of Birth<input
             name="dateOfBirth"
             type="text"
             value={this.props.dateOfBirth}

@@ -23,20 +23,20 @@ export class About extends React.Component {
       <div className="main-content">
         <h1>Athlete Form</h1>
         <form id="myForm">
-          Description:<textarea rows="4" cols="50"
+          Description<textarea rows="4" cols="50"
             name="description"
             type="text"
             value={this.props.description}
             onChange={this.handleChange}
           />
-          Location:{" "}
+          Location{" "}
           <input
             name="location"
             type="text"
             value={this.props.location}
             onChange={this.handleChange}
           />
-          Team:<input
+          Team<input
             name="team"
             type="text"
             value={this.props.team}

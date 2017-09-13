@@ -52,17 +52,18 @@ export class Summary extends React.Component {
       content = (
         <div className="athlete-info">
           <h1>Make sure everything is correct!</h1>
-          <p>Name:{this.props.name}</p>
-          <p>Sports:{this.props.sports}</p>
-          <p>Nationality:{this.props.nationality}</p>
-          <p>Gender:{this.props.gender}</p>
-          <p>Date of Birth:{this.props.dateofBirth}</p>
-          <p>Location:{this.props.location}</p>
-          <p>Team:{this.props.team}</p>
-          <p>Instagram:{this.props.instagram}</p>
-          <p>Twitter:{this.props.twitter}</p>
-          <p>Facebook:{this.props.facebook}</p>
-          <div className="form-buttons">
+          <p>Name: {this.props.name}</p>
+          <p>Sports: {this.props.sports}</p>
+          <p>Nationality: {this.props.nationality}</p>
+          <p>Gender: {this.props.gender}</p>
+          <p>Date of Birth: {this.props.dateofBirth}</p>
+          <p>Description: {this.props.description}</p>
+          <p>Location: {this.props.location}</p>
+          <p>Team: {this.props.team}</p>
+          <p>Instagram: {this.props.instagram}</p>
+          <p>Twitter: {this.props.twitter}</p>
+          <p>Facebook: {this.props.facebook}</p>
+          <div className="summary-buttons">
             <button
               id="goToSocialMedia"
               className="next-button"

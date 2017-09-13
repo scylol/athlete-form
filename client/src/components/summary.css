@@ -2,3 +2,13 @@
     font-size: 24px;
     padding-left: 50px;
 }
+
+.athlete-info {
+    width: 50%;
+}
+
+.summary-buttons {
+    display: flex;
+    width:50%;
+    justify-content: space-between;
+}
