@@ -23,8 +23,7 @@ export class About extends React.Component {
       <div className="main-content">
         <h1>Athlete Form</h1>
         <form id="myForm">
-          Description:<input
-            required
+          Description:<textarea rows="4" cols="50"
             name="description"
             type="text"
             value={this.props.description}

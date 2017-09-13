@@ -24,7 +24,6 @@ export class SocialMedia extends React.Component {
         <h1>Athlete Form</h1>
         <form id="myForm">
           Instagram:<input
-            required
             name="instagram"
             type="text"
             value={this.props.instagram}
